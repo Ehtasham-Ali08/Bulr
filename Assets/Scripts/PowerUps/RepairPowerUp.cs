@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class RepairPowerUp : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private CarHealth health;
+
+    [Header("Repair Settings")]
+    public float healAmount = 40f;
+
     void Start()
     {
-        
+        health = GetComponent<CarHealth>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Activate()
     {
-        
+        health.Heal(healAmount);
+
+        Debug.Log("Repair Used");
     }
 }
+

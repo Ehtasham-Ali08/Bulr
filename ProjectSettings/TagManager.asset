@@ -11,13 +11,13 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Tree
+  - PlayerCar
   - RCC_Vehicle
   - RCC_WheelCollider
   - RCC_DetachablePart
   - RCC_Prop
-  - 
+  - Wall
   - 
   - 
   - 

@@ -8,12 +8,12 @@ public class TurboPowerUp : MonoBehaviour
     private Rigidbody rb;
 
     [Header("Turbo Settings")]
-    public float turboDuration = 3f;
+    public float turboDuration = 1.5f;
 
     [Tooltip("Acceleration force applied during turbo")]
     public float turboForce = 35f;
 
-    private bool turboActive = false;
+    public bool turboActive = false;
 
     void Start()
     {

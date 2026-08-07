@@ -8,7 +8,8 @@ public class CarPowerUpManager : MonoBehaviour
     public PowerUpTypes currentPowerUp = PowerUpTypes.None;
 
     public TurboPowerUp turbo;
-   // public ShieldPowerUp shield;
+    public RepairPowerUp repair;
+    public ShieldPowerUp shield;
 
     public bool HasPowerUp()
     {
@@ -28,11 +29,17 @@ public class CarPowerUpManager : MonoBehaviour
                 turbo.Activate();
                 break;
 
-            //case PowerUpTypes.Shield:
-             //   shield.Activate();
-              //  break;
+            case PowerUpTypes.Repair:
+                repair.Activate();
+                break;
+
+            case PowerUpTypes.Shield:
+                shield.Activate();
+                break;
+
         }
 
         currentPowerUp = PowerUpTypes.None;
     }
+   
 }

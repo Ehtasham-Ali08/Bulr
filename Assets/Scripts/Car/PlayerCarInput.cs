@@ -38,7 +38,7 @@ public class PlayerCarInput : MonoBehaviour
             inputs.steerInput = horizontal;
 
             inputs.handbrakeInput = Input.GetKey(KeyCode.Space) ? 1f : 0f;
-            inputs.boostInput = Input.GetKey(KeyCode.LeftShift) ? 1f : 0f;
+            inputs.boostInput = Input.GetKey(KeyCode.F) ? 1f : 0f;
         }
         else
         {
@@ -66,7 +66,7 @@ public class PlayerCarInput : MonoBehaviour
 
         if (playerID == 1)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 manager.UsePowerUp();
             }

@@ -8,6 +8,7 @@ public class PowerUpType : MonoBehaviour
     {
         None,
         Turbo,
-        Shield
+        Shield,
+        Repair
     }
 }
