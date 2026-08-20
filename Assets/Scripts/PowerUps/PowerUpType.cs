@@ -9,6 +9,8 @@ public class PowerUpType : MonoBehaviour
         None,
         Turbo,
         Shield,
-        Repair
+        Repair,
+        Mine,
+        Shockwave
     }
 }
