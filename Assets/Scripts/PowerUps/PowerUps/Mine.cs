@@ -7,6 +7,9 @@ public class Mine : MonoBehaviour
     [Header("Explosion Effect")]
     public ParticleSystem blastEffectPrefab;
 
+    public AudioSource audioSource;
+    public AudioClip AudioClip;
+
     public float armTime = 0.1f;
     public float damage = 20f;
     private bool armed = false;
@@ -35,17 +38,16 @@ public class Mine : MonoBehaviour
             ParticleSystem effect = Instantiate(
                 blastEffectPrefab,
                 transform.position,
-                Quaternion.identity
+                Quaternion.identity  
             );
 
             effect.Play(true);
-
+            audioSource.PlayOneShot(AudioClip);
             Destroy(effect.gameObject, 2f);
         }
         if (health != null)
         {
-            health.TakeDamage(damage);
-
+            health.TakeDamage(damage);           
             Debug.Log("Mine exploded!");
 
             Destroy(gameObject);

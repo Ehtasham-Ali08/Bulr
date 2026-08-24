@@ -21,12 +21,16 @@ public class RaceManager : MonoBehaviour
     [Header("Position UI")]
     public PositionUI[] positionUI;
 
+    [Header("Particles")]
+    public ParticleSystem[] particleSystems;
+
     [Header("UI")]
     public TMPro.TextMeshProUGUI lapText;
     public TMPro.TextMeshProUGUI finishText;
     public GameObject resultsPanel;
     public TMPro.TextMeshProUGUI resultsText;
     public TMPro.TextMeshProUGUI countdownText;
+
 
     private int[] currentLaps;
     private bool[] raceFinished;
@@ -171,6 +175,13 @@ public class RaceManager : MonoBehaviour
             finalPosition
         );
 
+        //add particle here 
+        foreach (var particle in particleSystems)
+        {
+            particle.Play();   
+        }
+
+
         // Disable driving
         car.enabled = false;
 
@@ -257,14 +268,6 @@ public class RaceManager : MonoBehaviour
              position++)
         {
             int racerIndex = order[position];
-
-            Debug.Log(
-            racers[racerIndex].gameObject.name +
-            " | Progress: " +
-            racerProgress[racerIndex] +
-            " | Position: " +
-            (position + 1)
-        );
 
             if (racerIndex < positionUI.Length &&
                 positionUI[racerIndex] != null)

@@ -5,6 +5,8 @@ using static PowerUpType;
 
 public class PowerUpPickup : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public AudioClip audioClip;
     public PowerUpTypes powerUpType;
 
     private void OnTriggerEnter(Collider other)
@@ -17,6 +19,8 @@ public class PowerUpPickup : MonoBehaviour
 
         if (manager.HasPowerUp())
             return;
+
+        audioSource.PlayOneShot(audioClip);
 
         manager.GivePowerUp(powerUpType);
 
